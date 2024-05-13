@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ContaBanco {
-    private String numConta; // Alteração: Número da conta como String
+    private String numConta;
     private char tipo;
     private String nome;
     private double saldo;
@@ -12,7 +12,7 @@ public class ContaBanco {
     Random gerador = new Random();
 
     public ContaBanco() {
-        this.numConta = ""; // Inicializa como string vazia
+        this.numConta = "";
         this.saldo = 0.0;
         this.status = false;
     }
@@ -30,7 +30,7 @@ public class ContaBanco {
 
             // Gerar número da conta como string de 6 dígitos
             for (int i = 0; i < 6; i++) {
-                this.numConta += gerador.nextInt(10); // Concatena um dígito de 0 a 9
+                this.numConta += gerador.nextInt(10);
             }
             System.out.println("\nNúmero da sua conta: " + this.numConta + "\n");
 
@@ -40,7 +40,7 @@ public class ContaBanco {
     }
 
     public void fecharConta() {
-        if (this.status && this.saldo == 0) { // Fechar apenas se o saldo for zero
+        if (this.status && this.saldo == 0) {
             this.status = false;
             System.out.println("Conta fechada com sucesso!");
         } else if (this.saldo > 0) {
@@ -83,7 +83,6 @@ public class ContaBanco {
         System.out.println("[0] Sair");
     }
 
-    // Getters e Setters para os atributos
     public String getNumConta() {
         return numConta;
     }
